@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{02C31552-29A3-4734-8D4A-9C001BEB8A4B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Compiling</RootNamespace>
+    <AssemblyName>Compiling</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AST\ASTNode.cs" />
+    <Compile Include="AST\Expressions\BasicsFunctions\PointsFunction.cs" />
+    <Compile Include="AST\Expressions\BasicsFunctions\Randoms.cs" />
+    <Compile Include="AST\Expressions\BasicsFunctions\Samples.cs" />
+    <Compile Include="AST\Expressions\GObjectsConstructors\MeasureConstructor.cs" />
+    <Compile Include="AST\Expressions\BasicsFunctions\Intersect.cs" />
+    <Compile Include="AST\Expressions\GObjectsConstructors\PointConstructor.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\AndOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\DivisionOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\EqualsOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\GreaterOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\GreaterOrEqualsOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\LessOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\LessOrEqualsOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\MinusOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\ModulusOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\MultiplicationOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\NotEqualsOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\OrOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\PlusOperator.cs" />
+    <Compile Include="AST\Expressions\Constant.cs" />
+    <Compile Include="AST\Expression.cs" />
+    <Compile Include="AST\Expressions\FunctionCall.cs" />
+    <Compile Include="AST\Expressions\GObjectsConstructors\CircleConstructor.cs" />
+    <Compile Include="AST\Expressions\ConstructorExpression.cs" />
+    <Compile Include="AST\Expressions\GObjectsConstructors\LineConstructor.cs" />
+    <Compile Include="AST\Expressions\GObjectsConstructors\RayConstructor.cs" />
+    <Compile Include="AST\Expressions\GObjectsConstructors\SegmentConstructor.cs" />
+    <Compile Include="AST\Expressions\IfThenElseExpression.cs" />
+    <Compile Include="AST\Expressions\LetInExpresison.cs" />
+    <Compile Include="AST\Expressions\OperationNode.cs" />
+    <Compile Include="AST\Expressions\Operations\UnaryOperators\NegativeOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\UnaryOperators\NotOperator.cs" />
+    <Compile Include="AST\Expressions\SequenceExpression.cs" />
+    <Compile Include="AST\Expressions\Operations\BinaryOperators\ThreePointsOperator.cs" />
+    <Compile Include="AST\Expressions\Operations\UnaryOperator.cs" />
+    <Compile Include="AST\Expressions\Variable.cs" />
+    <Compile Include="AST\Expressions\IdNode.cs" />
+    <Compile Include="AST\ProgramNode.cs" />
+    <Compile Include="AST\Statements\ColorStatement.cs" />
+    <Compile Include="AST\Statements\DrawStatement.cs" />
+    <Compile Include="AST\Statements\FunctionDeclaration.cs" />
+    <Compile Include="AST\Statement.cs" />
+    <Compile Include="AST\Statements\GObjectDeclaration.cs" />
+    <Compile Include="AST\Statements\GObjectDeclarations\ArcDeclaration.cs" />
+    <Compile Include="AST\Statements\GObjectDeclarations\ArcSequenceDeclaration.cs" />
+    <Compile Include="AST\Statements\GObjectDeclarations\CircleDeclaration.cs" />
+    <Compile Include="AST\Statements\GObjectDeclarations\CircleSequenceDeclaration.cs" />
+    <Compile Include="AST\Statements\GObjectDeclarations\LineDeclaration.cs" />
+    <Compile Include="AST\Statements\GObjectDeclarations\LineSequenceDeclaration.cs" />
+    <Compile Include="AST\Statements\GObjectDeclarations\PointDeclaration.cs" />
+    <Compile Include="AST\Statements\GObjectDeclarations\PointSequenceDeclaration.cs" />
+    <Compile Include="AST\Statements\GObjectDeclarations\RayDeclaration.cs" />
+    <Compile Include="AST\Statements\GObjectDeclarations\RaySequenceDeclaration.cs" />
+    <Compile Include="AST\Statements\GObjectDeclarations\SegmentDeclaration.cs" />
+    <Compile Include="AST\Statements\GObjectDeclarations\SegmentSequenceDeclaration.cs" />
+    <Compile Include="AST\Statements\ImportStatement.cs" />
+    <Compile Include="AST\Statements\RestoreStatement.cs" />
+    <Compile Include="AST\Statements\VariablesDeclaration.cs" />
+    <Compile Include="CompilingError.cs" />
+    <Compile Include="ExecutionScope.cs" />
+    <Compile Include="FunctionInfo.cs" />
+    <Compile Include="GObjects\Arc.cs" />
+    <Compile Include="GObjects\Circle.cs" />
+    <Compile Include="GObjects\GColor.cs" />
+    <Compile Include="GObjects\GObject.cs" />
+    <Compile Include="GObjects\Line.cs" />
+    <Compile Include="GObjects\Measure.cs" />
+    <Compile Include="GObjects\Number.cs" />
+    <Compile Include="GObjects\GPoint.cs" />
+    <Compile Include="GObjects\Ray.cs" />
+    <Compile Include="GObjects\Segment.cs" />
+    <Compile Include="GObjects\Sequence.cs" />
+    <Compile Include="GObjects\Text.cs" />
+    <Compile Include="GObjects\Undifined.cs" />
+    <Compile Include="IDataInput.cs" />
+    <Compile Include="IDrawer.cs" />
+    <Compile Include="Lexing\LexicalAnalysisProcess.cs" />
+    <Compile Include="Operator\IMiniOperator.cs" />
+    <Compile Include="Operator\MiniOperators\AndOperators\NumberAndNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\Calculus.cs" />
+    <Compile Include="Operator\MiniOperators\DivisionOperators\MeasureDivisionMeasureOperator.cs" />
+    <Compile Include="Operator\MiniOperators\EqualsOperators\MeasureEqualsMeasureOperator.cs" />
+    <Compile Include="Operator\MiniOperators\EqualsOperators\NumberEqualsNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\GreaterOperators\MeasureGreaterMeasureOperator.cs" />
+    <Compile Include="Operator\MiniOperators\GreaterOperators\NumberGreaterNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\GreaterOrEqualsOperators\MeasureGreaterOrEqualsMeasureOperator.cs" />
+    <Compile Include="Operator\MiniOperators\GreaterOrEqualsOperators\NumberGreaterOrEqualsNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\IBinaryOperator.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\CircleIntersectionCircle.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\LineIntersectionCircle.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\LineIntersectionLine.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\PointIntersectionCircle.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\PointIntersectionLine.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\PointIntersectionRay.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\PointIntersectionSegment.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\RayIntersectionCircle.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\RayIntersectionLine.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\SegmentIntersectionCircle.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\SegmentIntersectionRay.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\SegmentIntersectionSegment.cs" />
+    <Compile Include="Operator\MiniOperators\Intersections\SegmentIntersectLine.cs" />
+    <Compile Include="Operator\MiniOperators\LessOperators\MeasureLessMeasureOperator.cs" />
+    <Compile Include="Operator\MiniOperators\LessOrEqualsOperators\MeasureLessOrEqualsMeasureOperator.cs" />
+    <Compile Include="Operator\MiniOperators\MinusOperators\MeasureMinusMeasureOperator.cs" />
+    <Compile Include="Operator\MiniOperators\MultiplicationOperators\MeasureMultiplicationNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\NegativeOperators\NegativeNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\NotEqualsOperators\MeasureNotEqualsMeasureOperator.cs" />
+    <Compile Include="Operator\MiniOperators\NotOperators\NotNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\OrOperators\NumberOrNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\PlusOperators\MeasurePlusMeasureOperator.cs" />
+    <Compile Include="Operator\MiniOperators\ThreePointOperators\NumberThreePointNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\ThreePointOperators\NumberThreePointsOperator.cs" />
+    <Compile Include="Operator\Operator.cs" />
+    <Compile Include="Operator\MiniOperators\IUnaryOperator.cs" />
+    <Compile Include="Operator\MiniOperators\LessOperators\NumberLessNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\LessOrEqualsOperators\NumberLessOrEqualsNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\MinusOperators\NumberMinusNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\DivisionOperators\NumberDivisionNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\ModulusOperators\NumberModulusNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\MultiplicationOperators\NumberMultiplicationNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\NotEqualsOperators\NumberNotEqualsNumberOperator.cs" />
+    <Compile Include="Operator\MiniOperators\PlusOperators\NumberPlusNumberOperator.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\AndOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\DivisionOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\EqualsOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\FunctionCallParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\GreaterOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\IInfixParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\GreaterOrEqualsOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\LessOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\LessOrEqualsOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\MinusOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\MultiplicationOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\NotEqualsOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\PlusOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\ThreePointOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\BasicsFunction\IntersectParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\BasicsFunction\PointsFunctionParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\BasicsFunction\RandomsParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\BasicsFunction\SamplesParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ColorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ColorParsers\BlackColorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ColorParsers\BlueColorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ColorParsers\CyanColorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ColorParsers\GrayColorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ColorParsers\GreenColorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ColorParsers\MagentaColorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ColorParsers\RedColorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ColorParsers\WhiteColorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ColorParsers\YellowColorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ConstructorParser\CircleConstructorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ConstructorParser\MeasureConstructorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ConstructorParser\PointConstuctorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ConstructorParser\RayConstructorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ConstructorParser\SegmentConstructorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ConstructorsParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\GroupParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\IfThenElseExpressionParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\IPrefixParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\LetInExpressionParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\ConstructorParser\LineConstructorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\NegativeOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\NotOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\InfixParser\OrOperatorParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\SequenceExpressionParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\TextParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\VariableParser.cs" />
+    <Compile Include="Parsing\ExpressionsParser\PrefixParser\NumberPrefixParser.cs" />
+    <Compile Include="Parsing\IMiniParser.cs" />
+    <Compile Include="Parsing\Parser.cs" />
+    <Compile Include="Parsing\Precedence.cs" />
+    <Compile Include="Parsing\IStatementParser.cs" />
+    <Compile Include="Parsing\StatementsParser\ColorStatementParser.cs" />
+    <Compile Include="Parsing\StatementsParser\DeclarationParser.cs" />
+    <Compile Include="Parsing\StatementsParser\GObjectDeclarations\ArcDeclarationParser.cs" />
+    <Compile Include="Parsing\StatementsParser\GObjectDeclarations\CircleDeclarationParser.cs" />
+    <Compile Include="Parsing\StatementsParser\DrawParser.cs" />
+    <Compile Include="Parsing\StatementsParser\FunctionDeclarationParser.cs" />
+    <Compile Include="Parsing\StatementsParser\GObjectDeclarations\LineDeclarationParser.cs" />
+    <Compile Include="Parsing\StatementsParser\GObjectDeclarations\PointDeclarationParser.cs" />
+    <Compile Include="Parsing\StatementsParser\GObjectDeclarations\RayDeclarationParser.cs" />
+    <Compile Include="Parsing\StatementsParser\GObjectDeclarations\SegmentDeclarationParser.cs" />
+    <Compile Include="Parsing\StatementsParser\IDeclarationParser.cs" />
+    <Compile Include="Parsing\StatementsParser\ImportParser.cs" />
+    <Compile Include="Parsing\StatementsParser\RestoreParser.cs" />
+    <Compile Include="Parsing\StatementsParser\VariablesDeclarationParser.cs" />
+    <Compile Include="SemanticScope.cs" />
+    <Compile Include="Lexing\Token.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Operator\MiniOperators\PointsFunction\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
